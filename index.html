@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemstone Jewellery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- إضافة Boxicons لدعم أيقونات Register -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">GEMSTONE</div>
+            <div id="userInfo" class="user-info"> </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdownList"><a href="#categories">Categories</a>
+                    <div class="dropdown-content">
+                        <a href="#">Diamond</a>
+                        <a href="#">Gold</a>
+                        <a href="#">Silver</a>
+                        <a href="#">Rings</a>
+                        <a href="#">Necklace</a>
+                        <a href="#">Bracelet</a>
+                    </div>
+                </li>
+                <li><a href="sale.html">Sale</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#" id="loginLink">Log In</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="search.html"><i class="fas fa-search"></i></a>
+                <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+
+                <div class="user-profile-container">
+                    <a href="#" id="profileLink" style="display:none;"><i class="fas fa-user"></i></a>
+                    <div id="userInfoDropdown" class="user-info-dropdown">
+                        <p>Welcome, <span id="dropdownUsername">Guest</span></p>
+                        <a href="profile.html">My Profile</a>
+                        <a href="#" id="logoutDropdownLink">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">×</span>
+            <div class="formHeader">
+                <div class="titles">
+                    <div class="title-login">Login</div>
+                    <div class="title-register">Register</div>
+
+                </div>
+                <form action="#" class="login-form" autocomplete="off" onsubmit="return validateLogin(event)">
+
+            </div>
+            <div class="input-box">
+                <input type="text" class="input-field" id="log-email" required>
+                <label for="log-email" class="label">Email</label>
+                <i class='bx bx-envelope icon'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" class="input-field" id="log-pass" required>
+                <label for="log-pass" class="label">Password</label>
+                <i class='bx bx-lock-alt icon'></i>
+
+            </div>
+            <div class="form-cols">
+                <div class="col-1"></div>
+                <div class="col-2">
+                    <a href="#">Forgot password</a>
+                </div>
+            </div>
+            <div class="input-box">
+                <button class="btn-submit" id="signinbtn">Sign In <i class="fa-solid fa-right-to-bracket"></i></button>
+            </div>
+            <div class="switch-form">
+                <span>Don't have an account? <a href="#" id="registerLink">Register</a></span>
+            </div>
+            </form>
+            <!-- REGISTER FORM -->
+            <form action="#" class="register-form" autocomplete="off">
+                <div class="input-box">
+                    <input type="text" class="input-field" id="reg-name" required>
+                    <label for="reg-name" class="label">Username</label>
+                    <i class='bx bx-user icon'></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-field" id="reg-email" required>
+                    <label for="reg-email" class="label">Email</label>
+                    <i class='bx bx-envelope icon'></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" class="input-field" id="reg-pass" required>
+                    <label for="reg-pass" class="label">Password</label>
+                    <i class='bx bx-lock-alt icon'></i>
+                </div>
+                <div class="form-cols">
+                    <div class="col-1">
+                        <input type="checkbox" id="agree">
+                        <label for="agree"> I agree to terms & conditions</label>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+                <div class="input-box">
+                    <button class="btn-submit" id="SignUpBtn">Sign Up </button>
+                </div>
+                <div class="switch-form">
+                    <span>Already have an account? <a href="#" id="loginBackLink">Login</a></span>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+
+    <!-- Main Section -->
+
+    <section>
+        <div class="firstpage">
+            <h1>GEMSTONE</h1>
+            <p>© asmaa hamoda</p>
+            <video autoplay loop muted src="6236414-uhd_4096_2160_24fps.mp4" width="100%" height="100% "
+                class="video"></video>
+        </div>
+    </section>
+
+    <main>
+        <section class="main-layout">
+            <div class="main-content-box">
+
+                <h1>Crafting Dreams in Gold and Gems</h1>
+                <p>Explore our curated collection of fine jewelry, meticulously crafted with the finest materials to
+                    adorn
+                    you with timeless elegance. At Golden Jewelry, we believe that every piece that combines artistry,
+                    elegance, and timeless beauty.</p>
+                <button class="shop-now">Shop Now</button>
+
+            </div>
+            <div class="side-images">
+
+                <img src="./360_F_1302514540_Ip8AEi722ttVhY56ql9S2yVSO9XOggV5-removebg-preview.png" alt="Jewelry 2"
+                    class="side-image">
+            </div>
+
+
+        </section>
+    </main>
+    <section>
+
+        <div class="Coming" style="position: relative;
+            padding: 20px; background-color: #1b3832;">
+            <div class="section-title"
+                style="font-size: 60px; padding: 0rem; font-family: 'Times New Roman', Times, serif;
+     font-weight: bold; text-align: center; letter-spacing: 2px; color: #d4b345;
+      background-image: url(palegreenquartznecklace.webp); background-size: cover; background-position: center;
+       background-repeat: no-repeat; width: 100%; height: 400px; display: flex; justify-content: center; align-items: center;">
+                Coming Soon!
+            </div>
+        </div>
+    </section>
+    <section class="swiper-sec" style="background-color: #1b3832;">
+
+        <div class="title2" style="font-size: 60px; padding: 0rem; font-family: 'Times New Roman', Times, serif;
+     font-weight: bold; text-align: center; letter-spacing: 2px; color: #d4b345; margin: 5rem;">Our Products </div>
+
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+
+
+                <div class="swiper-slide">
+                    <div class="card">
+                        <img src="n.webp" alt="product1">
+                        <h3>Elegant Necklace</h3>
+                        <p>A stunning diamond ring crafted with precision and brilliance.</p>
+                        <button class="card-btn">View Details</button>
+                    </div>
+                </div>
+
+                 <div class="swiper-slide">
+                    <div class="card">
+                        <img src="./CZSET355_1.webp" alt="product2">
+                        <h3>Elegant Diamond Necklace</h3>
+                        <p>A stunning diamond ring crafted with precision and brilliance.</p>
+                        <button class="card-btn">View Details</button>
+                    </div>
+                </div>
+
+                 <div class="swiper-slide">
+                    <div class="card">
+                        <img src="2023-06-17_3_copy_1445x.webp" alt="product3">
+                        <h3>Selver Bracelet</h3>
+                        <p>A stunning selver bracelet crafted with precision and brilliance.</p>
+                        <button class="card-btn">View Details</button>
+                    </div>
+                </div>
+
+                 <div class="swiper-slide">
+                    <div class="card">
+                        <img src="jewelove-18k-gold-white-fancy-natural-yellow-diamond-bracelet-jl-aub-101-41673147318513.jpg" alt="product4">
+                        <h3>Elegant Gold Bracelet</h3>
+                        <p>A stunning golden Bracelet crafted with precision and brilliance.</p>
+                        <button class="card-btn">View Details</button>
+                    </div>
+                </div>
+
+                 <div class="swiper-slide">
+                    <div class="card">
+                        <img src="platinum-double-halo-oval-diamond-ring-071-077-f-si1.jpg" alt="product5">
+                        <h3>Elegant Diamond Ring</h3>
+                        <p>A stunning diamond ring crafted with precision and brilliance.</p>
+                        <button class="card-btn">View Details</button>
+                    </div>
+                </div>
+
+                 
+
+            </div>
+          <div class="swiper-pagination"></div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        </div>
+
+
+
+
+    </section>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
