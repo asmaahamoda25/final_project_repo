@@ -1,3 +1,5 @@
+// script.js
+
 const loginLink = document.getElementById('loginLink');
 const loginModal = document.getElementById('loginModal');
 const closeModal = document.getElementById('closeModal');
@@ -8,7 +10,56 @@ const modalContent = document.querySelector('.modal-content');
 const userIcon = document.getElementById('profileLink');
 const userInfoDropdown = document.getElementById('userInfoDropdown');
 const dropdownUsername = document.getElementById('dropdownUsername');
-const logoutDropdownLink = document.getElementById('logoutDropdownLink');
+const logoutDropdownLink = document.getElementById('logoutDropdownLink'); // تم تصحيح هذا السطر
+
+const dropbtn = document.querySelector('.dropdownList > a');
+const dropdownContent = document.querySelector('.dropdownList .dropdown-content');
+
+const signInButton = document.getElementById('signinbtn');
+const logEmailInput = document.getElementById('log-email');
+const logPassInput = document.getElementById('log-pass');
+
+
+// Initialize Swiper
+const swiper = new Swiper('.mySwiper', {
+   
+    direction: 'horizontal', 
+    loop: true, 
+
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true, 
+    },
+
+    // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+
+    
+    slidesPerView: 1, // العدد الافتراضي للكاردز اللي هتظهر في الشاشات الصغيرة
+    spaceBetween: 10, // المسافة بين الكاردز
+
+    // Responsive breakpoints
+    breakpoints: {
+        576: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+        },
+        992: {
+            slidesPerView: 3,
+            spaceBetween: 40,
+        },
+        1200: {
+            slidesPerView: 3,
+            spaceBetween: 50,
+        }
+    }
+});
+
+console.log('Dropbtn element:', dropbtn);
+console.log('Dropdown Content element:', dropdownContent);
 
 if (!loginLink || !loginModal || !closeModal || !registerLink || !loginBackLink || !modalContent ||
     !userIcon || !userInfoDropdown || !dropdownUsername || !logoutDropdownLink) {
@@ -36,10 +87,6 @@ function updateUI() {
         if (userInfoDropdown) userInfoDropdown.classList.remove('active');
     }
 }
-
-const signInButton = document.getElementById('signinbtn');
-const logEmailInput = document.getElementById('log-email');
-const logPassInput = document.getElementById('log-pass');
 
 if (signInButton && logEmailInput && logPassInput) {
     signInButton.addEventListener('click', (event) => {
@@ -88,7 +135,6 @@ if (logoutDropdownLink) {
 
 document.addEventListener('DOMContentLoaded', () => {
     updateUI();
-    // loadCart();
 });
 
 if (loginLink && loginModal && modalContent) {
@@ -130,3 +176,31 @@ if (loginBackLink && modalContent) {
         modalContent.classList.remove('active');
     });
 }
+
+const sr = ScrollReveal ({
+    origin: 'top',
+    distance: '60px',
+    duration: 2000,
+    reset: true
+});
+
+sr.reveal('.main-content-box h1', { delay: 200 });
+sr.reveal('.main-content-box p', { delay: 400 });
+sr.reveal('.shop-now', { delay: 600 });
+sr.reveal('.side-image', { origin: 'top', distance: '60px', delay: 800 });
+
+
+if (dropbtn && dropdownContent) {
+    dropbtn.addEventListener('click', function(event) {
+        event.preventDefault();
+        dropdownContent.classList.toggle('active');
+    });
+}
+
+window.addEventListener('click', function(event) {
+    if (dropdownContent && !event.target.matches('.dropdownList > a') && !event.target.closest('.dropdown-content')) {
+        if (dropdownContent.classList.contains('active')) {
+            dropdownContent.classList.remove('active');
+        }
+    }
+});

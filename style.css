@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #0f1a16;
+    background-color:#1b3832;
     color: #ffffffcb;
 }
 
@@ -22,6 +22,48 @@ body {
 }
 
 
+.dropdownList {
+    position: relative;
+    display: inline-block;
+    
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background-color: #203d38;
+    border: 1px solid #203d38;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    min-width: 160px;
+    z-index: 101;
+    color: #fff;
+    text-align: right; 
+   
+}
+
+.dropdown-content.active{
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 8px 10px;
+    color: #d4af37;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    text-align: right; 
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.1); 
+    color: #eacc6cac;
+}
+
+
 .nav-icons {
     display: flex;
     gap: 15px;
@@ -37,6 +79,7 @@ body {
 .nav-icons a:hover {
     color: #eacc6cac;
 }
+
 
 .user-profile-container {
     position: relative;
@@ -79,15 +122,15 @@ body {
 .user-info-dropdown a {
     display: block;
     padding: 8px 10px;
-    color: #d4af37;
     transition: background-color 0.2s ease;
-
     text-decoration: none;
 
 }
 
 .user-info-dropdown a:hover {
+   background-color: wheat; 
     color: #eacc6cac;
+
 }
 
 #logoutLink {
@@ -531,6 +574,11 @@ main {
         max-width: 70%;
         height: auto;
     }
+    .navbar{
+         flex-direction: row;
+         padding: 10px;
+         
+    }
 }
 
 @media (max-width: 576px) {
@@ -555,5 +603,143 @@ main {
     .side-image {
         width: 200px;
         height: auto;
+    }
+    .navbar{
+         flex-direction: column;
+         padding: 10px;
+         
+    }
+}
+
+
+.swiper-sec{
+    padding: 60px 10px;
+    background-color:#203d38; 
+    text-align: center;
+    align-items: center;
+    
+}
+
+.swiper-wrapper{
+     align-items: center;
+       padding: 20px;
+      justify-content: space-between;
+
+}
+
+.swiper {
+    width: 100%;
+    height: auto; 
+
+    box-sizing: border-box;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px; 
+    height: auto; 
+}
+
+/* Card Styles */
+.card {
+    background-color: #1b3832; 
+    border-radius: 0px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    width: 100%; 
+    max-width: 300px; 
+    margin: 10px; /* مسافة بين الكاردز لو فيه أكتر من واحد في الشريحة */
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 7px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.card img {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover; 
+    border-radius: 0px;
+    margin-bottom: 1px;
+}
+
+.card h3 {
+    color: #eacc6cac;
+    font-size: 1em;
+    margin-bottom: 10px;
+   text-align: left;
+}
+
+.card p {
+    color: #ffffffcb;
+    font-size: 0.9em;
+    text-align: left;
+    margin-bottom: 20px;
+    flex-grow: 1; 
+}
+
+.card-btn {
+     background-color: #1b3832; 
+    color: #ffffffcb;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card-btn:hover {
+    background-color: #b89f2e;
+    color: #fff;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #ffffffcb !important;
+     transform: translateY(-50%); /* توسيط عمودي */
+    z-index: 10;
+  
+    
+}
+.swiper-pagination{
+   
+        z-index: 10;
+
+  
+}
+.swiper-pagination-bullet {
+    background: #d4b345 !important; 
+    
+}
+
+
+@media (min-width: 1200px) {
+    .swiper-slide {
+        width: calc(33.333% - 20px);
+    }
+}
+
+/* 2 كاردز في الشاشات المتوسطة */
+@media (max-width: 992px) {
+    .swiper-slide {
+        width: calc(50% - 20px); 
+    }
+}
+
+/* كارد واحد في الشاشات الصغيرة جداً */
+@media (max-width: 576px) {
+    .swiper-slide {
+        width: calc(100% - 20px); 
     }
 }
