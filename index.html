@@ -34,7 +34,7 @@
                 </li>
                 <li><a href="sale.html">Sale</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="#" id="loginLink">Log In</a></li>
+                <li><a href="login.html" id="loginLink">Log In</a></li>
             </ul>
             <div class="nav-icons">
                 <a href="search.html"><i class="fas fa-search"></i></a>
@@ -52,78 +52,7 @@
         </nav>
     </header>
 
-    <!-- Login Modal -->
-    <div id="loginModal" class="modal">
-        <div class="modal-content">
-            <span id="closeModal" class="close">×</span>
-            <div class="formHeader">
-                <div class="titles">
-                    <div class="title-login">Login</div>
-                    <div class="title-register">Register</div>
-
-                </div>
-                <form action="#" class="login-form" autocomplete="off" onsubmit="return validateLogin(event)">
-
-            </div>
-            <div class="input-box">
-                <input type="text" class="input-field" id="log-email" required>
-                <label for="log-email" class="label">Email</label>
-                <i class='bx bx-envelope icon'></i>
-            </div>
-            <div class="input-box">
-                <input type="password" class="input-field" id="log-pass" required>
-                <label for="log-pass" class="label">Password</label>
-                <i class='bx bx-lock-alt icon'></i>
-
-            </div>
-            <div class="form-cols">
-                <div class="col-1"></div>
-                <div class="col-2">
-                    <a href="#">Forgot password</a>
-                </div>
-            </div>
-            <div class="input-box">
-                <button class="btn-submit" id="signinbtn">Sign In <i class="fa-solid fa-right-to-bracket"></i></button>
-            </div>
-            <div class="switch-form">
-                <span>Don't have an account? <a href="#" id="registerLink">Register</a></span>
-            </div>
-            </form>
-            <!-- REGISTER FORM -->
-            <form action="#" class="register-form" autocomplete="off">
-                <div class="input-box">
-                    <input type="text" class="input-field" id="reg-name" required>
-                    <label for="reg-name" class="label">Username</label>
-                    <i class='bx bx-user icon'></i>
-                </div>
-                <div class="input-box">
-                    <input type="text" class="input-field" id="reg-email" required>
-                    <label for="reg-email" class="label">Email</label>
-                    <i class='bx bx-envelope icon'></i>
-                </div>
-                <div class="input-box">
-                    <input type="password" class="input-field" id="reg-pass" required>
-                    <label for="reg-pass" class="label">Password</label>
-                    <i class='bx bx-lock-alt icon'></i>
-                </div>
-                <div class="form-cols">
-                    <div class="col-1">
-                        <input type="checkbox" id="agree">
-                        <label for="agree"> I agree to terms & conditions</label>
-                    </div>
-                    <div class="col-2"></div>
-                </div>
-                <div class="input-box">
-                    <button class="btn-submit" id="SignUpBtn">Sign Up </button>
-                </div>
-                <div class="switch-form">
-                    <span>Already have an account? <a href="#" id="loginBackLink">Login</a></span>
-                </div>
-            </form>
-        </div>
-    </div>
-    </div>
-
+   
     <!-- Main Section -->
 
     <section>
@@ -173,8 +102,8 @@
     </section>
     <section class="swiper-sec" id="myproducts" style="background-color: #1b3832;">
 
-        <div class="title2" style="font-size: 60px; padding: 0rem; font-family: 'Times New Roman', Times, serif;
-     font-weight: bold; text-align: center; letter-spacing: 2px; color: #d4b345; margin: 5rem;">Our Products </div>
+        <div class="title2" style="font-size: 50px; padding: 0rem; font-family: 'Times New Roman', Times, serif;
+     font-weight: bold; text-align: center; letter-spacing: 2px; color: #d4b345; margin: 2rem;">Our Products </div>
 
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
@@ -185,7 +114,7 @@
                         <img src="n.webp" alt="product1">
                         <h3>Elegant Necklace</h3>
                         <p>A stunning diamond ring crafted with precision and brilliance.</p>
-                        <button class="card-btn">Show Product</button>
+                        <a href="product-details.html?id=1" class="card-btn">Show Product</a>
                     </div>
                 </div>
 
@@ -194,7 +123,7 @@
                         <img src="./CZSET355_1.webp" alt="product2">
                         <h3>Elegant Diamond Necklace</h3>
                         <p>A stunning diamond ring crafted with precision and brilliance.</p>
-                        <button class="card-btn">Show Product</button>
+                        <a href="product-details.html?id=102" class="card-btn">Show Product</a>
                     </div>
                 </div>
 
@@ -203,7 +132,7 @@
                         <img src="2023-06-17_3_copy_1445x.webp" alt="product3">
                         <h3>Selver Bracelet</h3>
                         <p>A stunning selver bracelet crafted with precision and brilliance.</p>
-                        <button class="card-btn">Show Product</button>
+                        <a href="product-details.html?id=103" class="card-btn">Show Product</a>
                     </div>
                 </div>
 
@@ -212,7 +141,7 @@
                         <img src="jewelove-18k-gold-white-fancy-natural-yellow-diamond-bracelet-jl-aub-101-41673147318513.jpg" alt="product4">
                         <h3>Elegant Gold Bracelet</h3>
                         <p>A stunning golden Bracelet crafted with precision and brilliance.</p>
-                        <button class="card-btn">Show Product</button>
+                        <a href="product-details.html?id=104" class="card-btn">Show Product</a>
                     </div>
                 </div>
 
@@ -221,7 +150,7 @@
                         <img src="platinum-double-halo-oval-diamond-ring-071-077-f-si1.jpg" alt="product5">
                         <h3>Elegant Diamond Ring</h3>
                         <p>A stunning diamond ring crafted with precision and brilliance.</p>
-                        <button class="card-btn">Show Product</button>
+                        <a href="product-details.html?id=105" class="card-btn">Show Product</a>
                     </div>
                 </div>
 
@@ -234,10 +163,14 @@
         <div class="swiper-button-prev"></div>
         </div>
 
+    </section>
 
 
+    <section>
 
     </section>
+
+   
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="./script.js"></script>
