@@ -1,0 +1,47 @@
+[
+  {
+    "id": "101",
+    "name": "Elegant Necklace",
+    "image": "n.webp",
+    "description": "A stunning necklace crafted with precision and brilliance, perfect for adding a touch of elegance to any outfit.",
+    "price": "549.99$",
+    "material": "Sterling Silver, Zircon",
+    "weight": "20g"
+  },
+  {
+    "id": "102",
+    "name": "Elegant Diamond Necklace",
+    "image": "./CZSET355_1.webp",
+    "description": "A stunning diamond necklace designed for ultimate sophistication and sparkle, perfect for special occasions.",
+    "price": "1999.99$",
+    "material": "White Gold, Diamonds",
+    "weight": "35g"
+  },
+  {
+    "id": "103",
+    "name": "Selver Bracelet",
+    "image": "2023-06-17_3_copy_1445x.webp",
+    "description": "A beautiful silver bracelet, exquisitely designed to enhance your wrist with its subtle glow and intricate details.",
+    "price": "299.99$",
+    "material": "925 Sterling Silver",
+    "weight": "18g"
+  },
+  {
+    "id": "104",
+    "name": "Elegant Gold Bracelet",
+    "image": "jewelove-18k-gold-white-fancy-natural-yellow-diamond-bracelet-jl-aub-101-41673147318513.jpg",
+    "description": "A luxurious golden bracelet, a timeless piece that blends classic design with modern elegance.",
+    "price": "1499.99$",
+    "material": "18K Gold",
+    "weight": "40g"
+  },
+  {
+    "id": "105",
+    "name": "Elegant Diamond Ring",
+    "image": "platinum-double-halo-oval-diamond-ring-071-077-f-si1.jpg",
+    "description": "A breathtaking diamond ring, symbolizing everlasting love and commitment, crafted with exceptional brilliance.",
+    "price": "3999.99$",
+    "material": "Platinum, Diamond",
+    "carat": "1.5 Carat"
+  }
+]
