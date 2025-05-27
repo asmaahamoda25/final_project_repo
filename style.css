@@ -237,7 +237,7 @@ body.login-body {
 
 .title-login {
     opacity: 1;
- 
+    
 }
 
 
@@ -656,7 +656,7 @@ main {
 .swiper {
     width: 100%;
     height: auto;
-
+    position: relative;
     box-sizing: border-box;
 }
 
@@ -666,6 +666,7 @@ main {
     align-items: center;
     width: 300px;
     height: auto;
+
 }
 
 /* Card Styles */
@@ -676,8 +677,7 @@ main {
     overflow: hidden;
     width: 100%;
     max-width: 300px;
-    margin: 10px auto;
-    /* مسافة بين الكاردز لو فيه أكتر من واحد في الشريحة */
+    margin: 10px 50px;
     display: flex;
     flex-direction: column;
     align-items: left;
@@ -736,30 +736,25 @@ main {
 .swiper-button-prev {
     color: #ffffffcb !important;
     transform: translateY(-50%);
-    /* توسيط عمودي */
     z-index: 10;
     width: 44px;
-    /* Default Swiper button width */
     height: 44px;
-    /* Default Swiper button height */
     margin-top: -22px;
 
 }
 
 .swiper-button-prev {
     left: 0;
-    /* Position at the left edge of .swiper-container-wrapper */
 }
 
 .swiper-button-next {
     right: 0;
-    /* Position at the right edge of .swiper-container-wrapper */
 }
 
 .swiper-pagination {
 
     z-index: 10;
-
+   align-items: center;
 
 }
 
@@ -790,3 +785,229 @@ main {
         align-items: center;
     }
 }
+.sale {
+    padding-top: 90px;
+    min-height: 100%;
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.sale img {
+    
+    max-width: 100%; 
+    height: auto;    
+    display: block;  
+    object-fit: cover; 
+}
+
+
+@media (min-width: 768px) { 
+    .sale img {
+        height: 600px;
+    }
+}
+
+/* New: Contact Sections Container */
+.contact-sections-container {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-grow: 1;
+    background-color:#1b3832; 
+    min-width: 900px;
+    width: 100%;
+    margin-top: 5rem;
+}
+
+.contact,
+.send {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    min-width: 300px;
+}
+
+.contact {
+    background-color:#1b3832;
+    border-right: 1px solid #333333;
+    
+}
+
+.send {
+    background-color: #203d38;
+    padding: 20px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 5em;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #ffffff;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+
+
+a {
+    color: #cccccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color:#ffffff;
+}
+
+
+.contact strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.contact a.E-mail {
+    color: #999999;
+}
+
+.contact a.E-mail:hover {
+    color:#b89f2e;
+}
+
+.contact h3:last-of-type {
+    margin-top: 40px;
+}
+
+/* Social Media Links Group Styling */
+@import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css');
+
+.social-links-group {
+    display: flex;
+    flex-direction: row; 
+    gap: 15px; 
+    margin-top: 20px; /* Space below "Connect With Us" heading */
+}
+
+
+.social-link-item i {
+    font-size: 1.5em; /* Size for the Font Awesome icon */
+    color: #999999; /* Initial icon color */
+    transition: color 0.3s ease;
+}
+
+
+
+.social-link-item:hover i {
+    color:#b89f2e ; 
+}
+
+
+/* Form Styling (.send div) */
+.send form {
+    margin-top: 10px;
+}
+
+.send label {
+    display: block;
+    margin-bottom: 2px;
+    font-size: 0.9em;
+    color: #bbbbbb;
+}
+
+.send input[type="text"],
+.send input[type="email"],
+.send textarea {
+    width: 100%;
+    padding: 10px 0px;
+    border: none;
+    border-bottom: 1px solid #bbbbbb;
+    background-color: transparent;
+    color :#555555;
+    font-size: 1em;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.send input::placeholder,
+.send textarea::placeholder {
+    color: #888888;
+}
+
+.send input:focus,
+.send textarea:focus {
+    border-bottom-color: #b89f2e;
+}
+
+.send textarea {
+    resize: vertical;
+    min-height: 70px;
+}
+
+.send button[type="submit"] {
+    background-color: #d4b345;
+    color: #ffffff;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.05em;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 20px;
+}
+
+.send button[type="submit"]:hover {
+    background-color: #b89f2e;
+}
+
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .contact-sections-container {
+        flex-direction: column; /* Stack sections vertically on smaller screens */
+        padding: 20px;
+    }
+
+    .contact {
+        border-right: none;
+        border-bottom: 1px solid #333333; /* Add bottom border when stacked */
+        padding-bottom: 40px;
+    }}
+footer {
+            background-color: #1b3832; /* نفس لون الـ .contact */
+            color: #cccccc;
+            padding: 20px;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9em;
+            border-top: 1px solid #333333;
+        }
+
+        .footer-links {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+            color: #999999;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #b89f2e;
+        }
+
+        .footer-copyright {
+            margin-top: 10px;
+        }
+        
