@@ -152,7 +152,7 @@ const productsData = [
     {
         "id": "101",
         "name": "Elegant Necklace",
-        "image": "/n.webp", 
+        "image": "n.webp", 
         "description": "A stunning necklace crafted with precision and brilliance, perfect for adding a touch of elegance to any outfit.",
         "price": "549.99$",
         "material": "Sterling Silver, Zircon",
