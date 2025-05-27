@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- إضافة Boxicons لدعم أيقونات Register -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css'>
+</head>
+    <title>Add To Cart</title>
+</head>
+<body>
+       <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">GEMSTONE</div>
+            <div id="userInfo" class="user-info"> </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdownList"><a href="#categories">Categories</a>
+                    <div class="dropdown-content">
+                        <a href="#">Diamond</a>
+                        <a href="#">Gold</a>
+                        <a href="#">Silver</a>
+                        <a href="#">Rings</a>
+                        <a href="#">Necklace</a>
+                        <a href="#">Bracelet</a>
+                    </div>
+                </li>
+                <li><a href="#Sale">Sale</a></li>
+                <li><a href="#ContactUs">Contact</a></li>
+                <li><a href="login.html" id="loginLink">Log In</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="search.html"><i class="fas fa-search"></i></a>
+                <a href="cart.html"><i class="fas fa-shopping-cart"></i><span id="cart-count">0</span></a>
+
+                <div class="user-profile-container">
+                    <a href="#" id="profileLink" style="display:none;"><i class="fas fa-user"></i></a>
+                    <div id="userInfoDropdown" class="user-info-dropdown">
+                        <p>Welcome, <span id="dropdownUsername">Guest</span></p>
+                        <a href="profile.html">My Profile</a>
+                        <a href="#" id="logoutDropdownLink">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+<section id="cart-container">
+    <h2 style="padding: 20px;">Shopping Cart </h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Products</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+         <tbody id="cart-items"></tbody>
+    </table>
+   <div class="cart-summary"></div>
+   <p style="font-weight: bold; padding: 20px;">Cart Total</p>
+            <ul>
+                <li>Subtotal: <span id="subtotal">0.00$</span></li>
+                <li>Delivery Fee: <span id="delivery-fee">Free</span></li>
+                <li>Grand Total: <span id="grand-total">0.00$</span></li>
+            </ul>
+            <button  id="checkout" onclick="checkout()">Checkout</button>
+            <button id="pay-ord"> payment</button>
+        </div>
+
+
+</section>
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">Home</a>
+            <a href="#about">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="footer-copyright">
+            &copy; 2025 GEMSTONE. All Rights Reserved.
+        </div>
+    </footer>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
