@@ -6,6 +6,8 @@ body {
     padding: 0;
     background-color: #1b3832;
     color: #ffffffcb;
+    height: 100%;
+    
 }
 
 .navbar {
@@ -1005,7 +1007,8 @@ footer {
             font-family: 'Poppins', sans-serif;
             font-size: 0.9em;
             border-top: 1px solid #333333;
-            margin-top: 5rem;
+            margin-top: 0;
+            flex-shrink: 0;
         }
 
         .footer-links {
@@ -1127,4 +1130,119 @@ body.products-description{
         min-width: unset;
         width: 100%;
     }
+}
+
+#cart-count {
+  
+    background-color: rgb(222, 219, 219);
+    color: rgb(185, 174, 174);
+    border-radius: 100%;
+    padding: 4px ;
+    font-size: 2px;
+    z-index: 1000;
+}
+.cart-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: left;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    vertical-align: middle; 
+}
+
+th {
+    background-color: #1b3832;
+}
+
+.product-item img {
+    width: 100px;
+    height: auto;
+    vertical-align: middle;
+    padding: 20px;
+}
+
+.quantity-controls {
+    align-items: center;
+    justify-content: center;
+
+}
+
+.quantity-controls button {
+    background-color: #1b3832;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.quantity-controls button:hover {
+    background-color: #b89f2e;
+}
+
+.quantity-controls input {
+    width: 40px;
+    text-align: center;
+    margin: 0 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.remove-btn {
+    background: none;
+    border: none;
+    color: rgb(233, 227, 227);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.cart-summary {
+    text-align: right;
+    padding: 20px;
+    
+}
+
+.cart-summary ul {
+    list-style: none;
+    padding: 20px;
+}
+
+.cart-summary li {
+    margin: 10px 0;
+}
+
+
+#pay-ord {
+        background-color:#a48417;
+    color: #ccc;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#pay-ord :hover{
+    background-color: #d4af37;
+}
+#checkout{
+
+    background-color:#a48417;
+    color: #ccc;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+}
+#checkout :hover{
+    background-color: #d4af37;
 }

@@ -199,6 +199,7 @@ const productsData = [
 document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get('id');
+    const productDetailsContainer = document.querySelector('.product-details-container');
 
     const productImage = document.getElementById('product-image');
     const productName = document.getElementById('product-name');
@@ -207,7 +208,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const productMaterial = document.getElementById('product-material');
     const productWeight = document.getElementById('product-weight');
     const productCarat = document.getElementById('product-carat');
-    const productDetailsContainer = document.querySelector('.product-details-container');
 
 
     if (productId) {
@@ -244,11 +244,151 @@ document.addEventListener('DOMContentLoaded', () => {
                 <a href="index.html#myproducts" class="back-button">Back to Products</a>
             `;
         }
-    } else {
+    } 
+});
 
-        productDetailsContainer.innerHTML = `
-            <h2>No Product ID Provided</h2>
-            <p>Please select a product from the <a href="index.html#myproducts">products list</a>.</p>
-        `;
+
+
+//cart js
+
+document.addEventListener('DOMContentLoaded', () => {
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+    if (!isLoggedIn) {
+        window.location.href = 'login.html';
+        return;
+    }
+
+    updateUI();
+    updateCartCount();
+
+    // إضافة المنتج للكارت (من صفحة تفاصيل المنتج)
+    const addToCartBtn = document.getElementById('add-to-cart-btn');
+    if (addToCartBtn) {
+        addToCartBtn.addEventListener('click', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+            const product = productsData.find(p => p.id === productId);
+
+            if (product) {
+                addToCart(product);
+                alert(`${product.name} Added to cart!`);
+            }
+        });
+    }
+
+    // عرض الكارت وتحديثه في صفحة cart.html
+    if (window.location.pathname.includes('cart.html')) {
+        renderCart();
     }
 });
+
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+// تحديث عدد العناصر في الـ Navbar
+function updateCartCount() {
+    const cartCount = document.getElementById('cart-count');
+    if (cartCount) {
+        cartCount.textContent = cart.length;
+    }
+}
+
+// إضافة منتج للكارت
+function addToCart(product) {
+    const cartItem = {
+        id: product.id,
+        name: product.name,
+        image: product.image,
+        price: parseFloat(product.price.replace('$', '')),
+        quantity: 1
+    };
+
+    const existingItem = cart.find(item => item.id === product.id);
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push(cartItem);
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+    if (window.location.pathname.includes('cart.html')) {
+        renderCart();
+    }
+}
+
+// عرض الكارت
+function renderCart() {
+    const cartItems = document.getElementById('cart-items');
+    const subtotal = document.getElementById('subtotal');
+    const deliveryFee = document.getElementById('delivery-fee');
+    const grandTotal = document.getElementById('grand-total');
+
+    if (!cartItems || !subtotal || !deliveryFee || !grandTotal) return;
+
+    cartItems.innerHTML = '';
+    
+let total = 0;
+cart.forEach((item, index) => {
+    const tr = document.createElement('tr');
+    tr.className = 'product-item';
+    tr.innerHTML = `
+        <td><img src="${item.image}" alt="${item.name}"> ${item.name}</td>
+        <td>$${item.price.toFixed(2)}</td>
+        <td class="quantity-controls">
+            <button onclick="updateQuantity(${index}, -1)">-</button>
+            <input type="number" value="${item.quantity}" min="1" onchange="updateQuantity(${index}, this.value)">
+            <button onclick="updateQuantity(${index}, 1)">+</button>
+        </td>
+        <td>$${(item.price * item.quantity).toFixed(2)}</td>
+        <td><button class="remove-btn" onclick="removeItem(${index})"><i class="fas fa-times"></i></button></td>
+    `;
+    cartItems.appendChild(tr);
+    total += item.price * item.quantity;
+});
+    subtotal.textContent = `${total.toFixed(2)}$`;
+    deliveryFee.textContent = 'Free';
+    grandTotal.textContent = `${total.toFixed(2)}$`;
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+// تحديث الكمية
+function updateQuantity(index, change) {
+    if (typeof change === 'number') {
+        cart[index].quantity = Math.max(1, cart[index].quantity + change);
+    } else {
+        cart[index].quantity = Math.max(1, parseInt(change));
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    renderCart();
+}
+
+// حذف منتج
+function removeItem(index) {
+    cart.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    renderCart();
+}
+
+// الدفع
+function checkout() {
+    if (cart.length === 0) {
+        alert('Empty cart');
+        return;
+    }
+
+    const orderId = 'ORD_' + Math.floor(Math.random() * 1000000);
+    const order = {
+        orderId,
+        items: cart,
+        total: document.getElementById('grand-total').textContent,
+        date: new Date().toISOString()
+    };
+
+   localStorage.setItem('order', JSON.stringify(order));
+alert(`Thank you! Your order with ID ${orderId} has been successfully placed.`);
+cart = [];
+localStorage.setItem('cart', JSON.stringify(cart));
+updateCartCount();
+renderCart();
+}
