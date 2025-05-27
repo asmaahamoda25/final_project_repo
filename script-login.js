@@ -25,7 +25,7 @@ if (signInButton && logEmailInput && logPassInput) {
 
         if (email === "test@example.com" && password === "123") {
             localStorage.setItem('isLoggedIn', 'true');
-            localStorage.setItem('username', 'DemoUser'); 
+            localStorage.setItem('username', 'User'); 
             alert('You have successfully logged in!');
             window.location.href = 'index.html'; // هنا يتم التوجيه للصفحة الرئيسية
         } else {

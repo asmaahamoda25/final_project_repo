@@ -384,6 +384,8 @@ body.login-body {
 
 .col-2 a:hover {
     text-decoration: underline;
+        color: #d4af37;
+
 }
 
 .switch-form {
@@ -398,6 +400,8 @@ body.login-body {
 
 .switch-form a:hover {
     text-decoration: underline;
+        color: #d4af37;
+
 }
 
 @media only screen and (max-width: 564px) {
