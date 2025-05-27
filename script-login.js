@@ -26,10 +26,10 @@ if (signInButton && logEmailInput && logPassInput) {
         if (email === "test@example.com" && password === "123") {
             localStorage.setItem('isLoggedIn', 'true');
             localStorage.setItem('username', 'DemoUser'); 
-            alert('تم تسجيل الدخول بنجاح!');
+            alert('You have successfully logged in!');
             window.location.href = 'index.html'; // هنا يتم التوجيه للصفحة الرئيسية
         } else {
-            alert('بريد إلكتروني أو كلمة مرور غير صحيحة.');
+            alert('Incorrect email or password.');
         }
         logEmailInput.value = '';
         logPassInput.value = '';
