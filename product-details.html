@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
 </head>
-<body>
+<body class="products-description">
      <nav class="navbar">
             <div class="logo">GEMSTONE</div>
             <div id="userInfo" class="user-info"> </div>
@@ -18,8 +18,8 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li class="dropdownList"><a href="#categories">Categories</a></li>
-                <li><a href="sale.html">Sale</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html#Sale">Sale</a></li>
+                <li><a href="index.html#ContactUs">Contact</a></li>
                 <li><a href="#" id="loginLink">Log In</a></li>
             </ul>
             <div class="nav-icons">
@@ -37,29 +37,43 @@
           </div> 
      </nav>
      
-     <div class="product-details">
-        <div class="product-img" id="1" > <img id="productImage" src="./platinum-double-halo-oval-diamond-ring-071-077-f-si1.jpg" alt="Product Image">
-</div>
-    </div>
-    <div class="product-info">
-        <h2 class="title"></h2>
-        <div class="rate">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <span>(4.5)</span>
+    <body>
+    <div class="product-details-container">
+        <div class="product-image-section">
+            <img id="product-image" src="" alt="Product Image">
         </div>
-        <div class="price"></div>
-        <P>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias exercitationem iure numquam 
-            repellat similique, modi, accusamus sint ipsa cum quod quasi molestias mollitia facilis c
-            ommodi tenetur ducimus voluptatum atque labore.</P>
-            <button class="btn" id="add-to-cart"> Add To Cart</button>
+        <div class="product-info-section">
+            <h2 id="product-name"></h2>
+            <p class="price" id="product-price"></p>
+            <p id="product-description"></p>
+            <p id="product-material"></p>
+            <p id="product-weight"></p>
+            <p id="product-carat"></p> <a href="index.html#myproducts" class="back-button">
+                Back To Products 
+                </a>
+                 <button class="cart-btn" >Add To Cart </button>
+        </div>
     </div>
-    
 
 
+
+
+
+
+
+
+
+  <footer>
+        <div class="footer-links">
+            <a href="#">Home</a>
+            <a href="#about">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="footer-copyright">
+            &copy; 2025 GEMSTONE. All Rights Reserved.
+        </div>
+    </footer>
 
 
 
